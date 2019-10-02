@@ -14,6 +14,9 @@
 		CE4069FF234436D6003B0626 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4069FD234436D6003B0626 /* LaunchScreen.storyboard */; };
 		CE406A0823443710003B0626 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE406A0723443710003B0626 /* TasksTableViewController.swift */; };
 		CE406A0A23443726003B0626 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE406A0923443726003B0626 /* TaskDetailViewController.swift */; };
+		CE406A0E23443A6D003B0626 /* Tasks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE406A0C23443A6D003B0626 /* Tasks.xcdatamodeld */; };
+		CE406A1023443BAB003B0626 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE406A0F23443BAB003B0626 /* CoreDataStack.swift */; };
+		CE406A1223443E98003B0626 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE406A1123443E98003B0626 /* Task+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		CE406A00234436D6003B0626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE406A0723443710003B0626 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		CE406A0923443726003B0626 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		CE406A0D23443A6D003B0626 /* Tasks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tasks.xcdatamodel; sourceTree = "<group>"; };
+		CE406A0F23443BAB003B0626 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		CE406A1123443E98003B0626 /* Task+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +64,9 @@
 		CE4069F1234436D4003B0626 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				CE406A06234436F7003B0626 /* View Controllers */,
 				CE4069F2234436D4003B0626 /* AppDelegate.swift */,
+				CE406A0B23443A42003B0626 /* Model */,
+				CE406A06234436F7003B0626 /* View Controllers */,
 				CE4069F4234436D4003B0626 /* SceneDelegate.swift */,
 				CE4069F8234436D4003B0626 /* Main.storyboard */,
 				CE4069FB234436D6003B0626 /* Assets.xcassets */,
@@ -76,6 +83,16 @@
 				CE406A0923443726003B0626 /* TaskDetailViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CE406A0B23443A42003B0626 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE406A0C23443A6D003B0626 /* Tasks.xcdatamodeld */,
+				CE406A0F23443BAB003B0626 /* CoreDataStack.swift */,
+				CE406A1123443E98003B0626 /* Task+Convenience.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +168,9 @@
 			files = (
 				CE4069F3234436D4003B0626 /* AppDelegate.swift in Sources */,
 				CE406A0823443710003B0626 /* TasksTableViewController.swift in Sources */,
+				CE406A0E23443A6D003B0626 /* Tasks.xcdatamodeld in Sources */,
+				CE406A1223443E98003B0626 /* Task+Convenience.swift in Sources */,
+				CE406A1023443BAB003B0626 /* CoreDataStack.swift in Sources */,
 				CE4069F5234436D4003B0626 /* SceneDelegate.swift in Sources */,
 				CE406A0A23443726003B0626 /* TaskDetailViewController.swift in Sources */,
 			);
@@ -350,6 +370,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE406A0C23443A6D003B0626 /* Tasks.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE406A0D23443A6D003B0626 /* Tasks.xcdatamodel */,
+			);
+			currentVersion = CE406A0D23443A6D003B0626 /* Tasks.xcdatamodel */;
+			path = Tasks.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE4069E7234436D4003B0626 /* Project object */;
 }

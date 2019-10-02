@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="2jd-5u-F3Q" style="IBUITableViewCellStyleDefault" id="luz-4b-dQl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" textLabel="2jd-5u-F3Q" style="IBUITableViewCellStyleDefault" id="luz-4b-dQl">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="luz-4b-dQl" id="kdT-ov-Dcl">
@@ -54,7 +54,7 @@
             </objects>
             <point key="canvasLocation" x="258" y="100"/>
         </scene>
-        <!--Title-->
+        <!--Task Detail View Controller-->
         <scene sceneID="F7P-RM-yjD">
             <objects>
                 <viewController id="aeN-s9-YLS" customClass="TaskDetailViewController" customModule="Tasks" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,6 +78,9 @@
                                                 <rect key="frame" x="81.5" y="0.0" width="292.5" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="textFieldEditingChanged:" destination="aeN-s9-YLS" eventType="editingChanged" id="EoP-wf-zWW"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -106,7 +109,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Y4-eG-QZx"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="mCA-JA-ENT">
+                    <navigationItem key="navigationItem" id="mCA-JA-ENT">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="Slx-lt-DqD">
                             <connections>
                                 <action selector="save:" destination="aeN-s9-YLS" id="EPi-Pl-B9D"/>

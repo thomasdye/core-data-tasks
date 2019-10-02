@@ -14,13 +14,49 @@ class TaskDetailViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var saveBarButtonItem: UIBarButtonItem!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    var task: Task? {
+        didSet {
+            updateViews()
+            
+        }
     }
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateViews()
+        
+        }
+    
     @IBAction func save(_ sender: Any) {
+        
+
+        
+        // Stretch goal of disabling the save button
+        guard let name = nameTextField.text, !name.isEmpty else {
+            return
+        }
+        
+
+        let notes = notesTextView.text
+        
+        if let task = task {
+            // editing/updating an existing task
+            task.name = name
+            task.notes = notes
+        } else {
+            let _ = Task(name: name, notes: notes)
+        }
+        
+        do {
+            let moc = CoreDataStack.shared.mainContext
+            try moc.save()
+        } catch {
+            print("Error saving managed object context: \(error)")
+        }
+        
+        navigationController?.popViewController(animated: true)
     }
     
     /*
@@ -32,5 +68,24 @@ class TaskDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func updateViews() {
+        
+        guard isViewLoaded else { return }
+        
+        title = task?.name ?? "Create Task"
+        nameTextField.text = task?.name
+        notesTextView.text = task?.notes
+        
+    }
 
+    @IBAction func textFieldEditingChanged(_ sender: Any) {
+        
+        if let name = nameTextField.text, !name.isEmpty {
+            saveBarButtonItem.isEnabled = true
+        } else {
+            saveBarButtonItem.isEnabled = false
+        }
+    }
 }
+
